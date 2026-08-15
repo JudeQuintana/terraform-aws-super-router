@@ -14,9 +14,7 @@ locals {
         ) : {
         route_table_id         = pair[0]
         destination_cidr_block = pair[1]
-      }
-    ]
-  ]))
+  }]]))
 
   peer_tgw_vpc_routes = toset(flatten([
     for this in local.peer_tgws : [
@@ -26,9 +24,7 @@ locals {
         ) : {
         route_table_id         = pair[0]
         destination_cidr_block = pair[1]
-      }
-    ]
-  ]))
+  }]]))
 
   # ipv6 self-route exclusion sets
   local_tgw_vpc_ipv6_routes = toset(flatten([
@@ -39,9 +35,7 @@ locals {
         ) : {
         route_table_id              = pair[0]
         destination_ipv6_cidr_block = pair[1]
-      }
-    ]
-  ]))
+  }]]))
 
   peer_tgw_vpc_ipv6_routes = toset(flatten([
     for this in local.peer_tgws : [
@@ -51,9 +45,7 @@ locals {
         ) : {
         route_table_id              = pair[0]
         destination_ipv6_cidr_block = pair[1]
-      }
-    ]
-  ]))
+  }]]))
 }
 
 module "this_generate_routes_to_other_vpcs" {
