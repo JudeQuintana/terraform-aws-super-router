@@ -7,7 +7,7 @@
 * into cross-region VPC route table entries. Operates as the Domain IR, evaluating
 * policy across an arbitrary number of Centralized Routers on each side.
 *
-* v2.2.1:
+* v2.1.1:
 * - Five new inspect toggles: `assertions`, `blast_radius`, `segment_report`, `policy_normalization`, `connectivity_graph`.
 * - Boolean-gated outputs for `segment_report`, `policy_normalization`, and `connectivity_graph`.
 * - Input-gated outputs for `assertions` (object with `must_deny`/`must_permit`) and `blast_radius` (derived from `policy_diff`).
