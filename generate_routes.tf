@@ -6,13 +6,13 @@ locals {
 }
 
 module "this_generate_routes_to_other_vpcs" {
-  source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
-  version = "1.2.0"
+  source = "git@github.com:JudeQuintana/terraform-aws-generate-routes-to-other-vpcs.git?ref=moar-semantic-toolchain"
 
   generate_routes_to_other_vpcs = {
     routing_policy            = var.super_router.routing_policy
     vpcs                      = local.all_vpcs
     previous_reachability     = var.super_router.inspect.policy_diff.previous_reachability
+    assertions                = var.super_router.inspect.assertions
     equivalent_routing_policy = var.super_router.inspect.equivalence.equivalent_routing_policy
   }
 }
