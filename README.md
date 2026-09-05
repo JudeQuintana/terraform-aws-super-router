@@ -140,7 +140,7 @@ The resulting architecture is a decentralized hub spoke topology:
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| <a name="module_this_generate_routes_to_other_vpcs"></a> [this\_generate\_routes\_to\_other\_vpcs](#module\_this\_generate\_routes\_to\_other\_vpcs) | git@github.com:JudeQuintana/terraform-aws-generate-routes-to-other-vpcs.git | moar-semantic-toolchain |
+| <a name="module_this_generate_routes_to_other_vpcs"></a> [this\_generate\_routes\_to\_other\_vpcs](#module\_this\_generate\_routes\_to\_other\_vpcs) | JudeQuintana/generate-routes-to-other-vpcs/aws | 1.2.1 |
 
 ## Resources
 

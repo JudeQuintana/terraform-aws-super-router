@@ -6,7 +6,8 @@ locals {
 }
 
 module "this_generate_routes_to_other_vpcs" {
-  source = "git@github.com:JudeQuintana/terraform-aws-generate-routes-to-other-vpcs.git?ref=moar-semantic-toolchain"
+  source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
+  version = "1.2.1"
 
   generate_routes_to_other_vpcs = {
     routing_policy            = var.super_router.routing_policy
