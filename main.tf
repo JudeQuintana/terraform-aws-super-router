@@ -7,12 +7,18 @@
 * into cross-region VPC route table entries. Operates as the Domain IR, evaluating
 * policy across an arbitrary number of Centralized Routers on each side.
 *
+* v2.1.2:
+* - Breaking change: `previous_reachability` type changed from `optional(map(string))` to versioned envelope `{ schema_version = 1, entries = [{ from, to, verdict, reason }] }`.
+* - Three new validations on `previous_reachability`: schema_version, verdict, reason.
+* - New `reachability_simplified` inspect output: writes `inspect/<name>-reachability-simplified.json` when `inspect.reachability = true`.
+* - Uses `generate_routes_to_other_vpcs` v1.2.2.
+*
 * v2.1.1:
 * - Five new inspect toggles: `assertions`, `blast_radius`, `segment_report`, `policy_normalization`, `connectivity_graph`.
 * - Boolean-gated outputs for `segment_report`, `policy_normalization`, and `connectivity_graph`.
 * - Input-gated outputs for `assertions` (object with `must_deny`/`must_permit`) and `blast_radius` (derived from `policy_diff`).
 * - Connectivity graph writes a `.dot` file (raw DOT, not JSON).
-* - Uses `generate_routes_to_other_vpcs` v1.12.0.
+* - Uses `generate_routes_to_other_vpcs` v1.2.1.
 *
 * v2.1.0:
 * - Breaking change: `routing_policy` is now required (no default). Matches Centralized Router interface.
